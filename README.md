@@ -2,10 +2,10 @@
 Ansible Project
 This project contains Ansible playbooks for configuring servers with various packages, services and tools.
 
-Project Structure
+# Project Structure
 
 
-ansible_project/
+# ansible_project/
 ├── inventory.yml
 ├── roles/
 │   ├── common/
@@ -23,7 +23,7 @@ ansible_project/
 │   ├── clamav/
 │   │   └── tasks/
 │   │       └── main.yml
-├── playbooks/
+    ├── playbooks/
 │   ├── setup_env.yml
 │   ├── install_packages.yml
 │   ├── manage_services.yml
@@ -37,16 +37,16 @@ playbooks contains the playbook files that invoke the roles
 inventory.yml defines the hosts to run ansible against
 templates contains any templates used by the roles
 
-Usage
+# Usage
 These playbooks are designed to be run from Ansible Tower.
 
-Prerequisites
+# Prerequisites
 Ansible needs to be installed on the target nodes
 Inventory needs to be imported into Tower
 This project needs to be imported into Tower
 Credentials like db password should be stored as Tower credentials
 
-Running
+# Running
 Create a job template that points to the site.yml playbook
 Select inventory and credentials
 Launch the job template to run on the hosts
