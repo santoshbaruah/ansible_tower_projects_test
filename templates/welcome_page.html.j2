@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome </title>
+</head>
+<body>
+    <header>
+        <h1>Welcome </h1>
+        <p>Today's date: {{ ansible_date_time.date }}</p>
+        <p>Hostname: {{ ansible_hostname }}</p>
+        <p>Environment Variable MY_VAR: {{ lookup('env', 'MY_VAR') }}</p>
+        <p>Environment Variable ANOTHER_VAR: {{ lookup('env', 'ANOTHER_VAR') }}</p>
+    </header>
+</body>
+</html>

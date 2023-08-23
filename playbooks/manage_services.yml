@@ -1,0 +1,7 @@
+---
+- name: Manage Services
+  hosts: all  
+  become: true
+
+  roles:
+    - services

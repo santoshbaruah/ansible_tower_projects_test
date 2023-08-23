@@ -1,0 +1,4 @@
+all:
+  hosts:
+    your_target_host:
+      ansible_host: your_target_host_ip_or_hostname

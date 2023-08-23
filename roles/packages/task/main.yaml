@@ -1,0 +1,16 @@
+- name: Install required packages
+  package:
+    name: "{{ item }}"
+    state: latest
+  loop:
+    - vim
+    - ssh
+    - curl
+    - htop
+    - fdisk
+    - nano
+    - zip
+    - unzip
+    - p7zip-full
+    - p7zip-rar
+    - clamav-daemon

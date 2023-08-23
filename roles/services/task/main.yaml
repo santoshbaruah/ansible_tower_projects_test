@@ -1,0 +1,28 @@
+---
+- name: Enable and restart Apache2
+  service:
+    name: apache2
+    enabled: yes
+    state: restarted
+  when: ansible_os_family == "Debian"
+
+- name: Enable and restart Nginx
+  service:
+    name: nginx
+    enabled: yes
+    state: restarted
+  when: ansible_os_family == "Debian"
+
+- name: Ensure Apache2 is listening on port 80
+  lineinfile:
+    path: /etc/apache2/ports.conf
+    regexp: '^Listen '
+    line: 'Listen 80'
+  when: ansible_os_family == "Debian"
+
+- name: Ensure Nginx is listening on port 8080
+  lineinfile:
+    path: /etc/nginx/sites-available/default
+    regexp: '^(\s*)listen '
+    line: '\1listen 8080 default_server;'
+  when: ansible_os_family == "Debian"

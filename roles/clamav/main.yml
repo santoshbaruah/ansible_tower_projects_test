@@ -1,0 +1,19 @@
+---
+- name: Install ClamAV
+  package:
+    name: clamav
+    state: present
+
+- name: Enable and start ClamAV daemon
+  service:
+    name: clamav-daemon
+    enabled: yes
+    state: started
+
+- name: Schedule daily freshclam updates
+  cron:
+    name: "ClamAV Signature Update"
+    job: "freshclam"
+    minute: 0
+    hour: 3
+    user: root
